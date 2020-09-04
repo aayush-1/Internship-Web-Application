@@ -12,8 +12,6 @@ a {
 }
 
 .flexbutton1, .flexbutton2 {
-	width: 150px;
-    height: 8px;
     text-align: center;
     font-size: 1.5em;
     padding: 4%;
@@ -25,6 +23,12 @@ a {
     cursor: pointer;
     color: #000;
     box-sizing: inherit;
+}
+div.horizontalgap {
+  float: left;
+  overflow: hidden;
+  height: 1px;
+  width: 0px;
 }
 
 
@@ -38,17 +42,17 @@ a {
   <br>
   <br>
     <div class = "flexbutton1">
-  <h4> Student </h4>
-  <a href= "{% url "login_student" %}"  class="favorite styled">Sign In</a>
-  <a href= "{% url "register_student" %}"  class="favorite styled">Sign Up</a>
+  <h2> Student </h2>
+  <a href= "{% url 'login_student' %}"  class="favorite styled">Sign In</a>
+  <a href= "{% url 'register_student' %}"  class="favorite styled">Sign Up</a>
   </div>
 
   <br>
   <br>
   <div class = "flexbutton1">
-  <h4> Professor </h4>
-  <a href= "{% url "login_professor" %}"  class="favorite styled">Sign In</a>
-  <a href= "{% url "register_professor" %}"  class="favorite styled">Sign Up</a>
+  <h2> Professor </h2>
+  <a href= "{% url 'login_professor' %}"  class="favorite styled">Sign In</a>
+  <a href= "{% url 'register_professor' %}"  class="favorite styled">Sign Up</a>
   </div>
 </center>
 
