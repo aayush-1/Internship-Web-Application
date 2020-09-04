@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+a {
+	text-align: center;
+    font-size: 30px;
+    font-weight: bold; 
+	
+}
+div {text-align: center;}
+</style>
+</head>
+<title>Portal</title>
+
+<body>
+<center>
+  <h1>Portal</h1>
+  <a href= "{% url "login_professor" %}"  class="favorite styled">Professor</a>
+  <br>
+  <a href= "{% url "login_student" %}"  class="favorite styled">Student</a>
+</center>
+
+</body>
+</html>
