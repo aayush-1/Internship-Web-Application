@@ -10,7 +10,24 @@ a {
     font-weight: bold; 
 	
 }
-div {text-align: center;}
+
+.flexbutton1, .flexbutton2 {
+	width: 150px;
+    height: 8px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 4%;
+    background-color: #002238;
+    border: none;
+    color: #fff;
+    font-family: "Frutiger",sans-serif;	
+    transition: transform .2s,-webkit-transform .2s;
+    cursor: pointer;
+    color: #000;
+    box-sizing: inherit;
+}
+
+
 </style>
 </head>
 <title>Portal</title>
@@ -18,9 +35,21 @@ div {text-align: center;}
 <body>
 <center>
   <h1>Portal</h1>
-  <a href= "{% url "login_professor" %}"  class="favorite styled">Professor</a>
   <br>
-  <a href= "{% url "login_student" %}"  class="favorite styled">Student</a>
+  <br>
+    <div class = "flexbutton1">
+  <h4> Student </h4>
+  <a href= "{% url "login_student" %}"  class="favorite styled">Sign In</a>
+  <a href= "{% url "register_student" %}"  class="favorite styled">Sign Up</a>
+  </div>
+
+  <br>
+  <br>
+  <div class = "flexbutton1">
+  <h4> Professor </h4>
+  <a href= "{% url "login_professor" %}"  class="favorite styled">Sign In</a>
+  <a href= "{% url "register_professor" %}"  class="favorite styled">Sign Up</a>
+  </div>
 </center>
 
 </body>

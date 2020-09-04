@@ -21,9 +21,15 @@ def prof_detail(request, pk):
 def portal(request):
     return render(request, "portal.html")
 
+def register_student(request):
+    return render(request, "register_student.html")
+
+def register_professor(request):
+    return render(request, "register_professor.html")
 
 def login_student(request):
     return render(request, "login_student.html")
 
 def login_professor(request):
     return render(request, "login_professor.html")
+
