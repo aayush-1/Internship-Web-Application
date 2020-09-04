@@ -2,7 +2,15 @@
 <html>
 <head>
 <style>
-h1 {text-align: center;}
+h1 {
+	font-size: 2em;
+	background-color: rgba(0,0,0,.1);
+    outline: 1px solid #708090;
+    border-radius: 3px;
+    background-clip: padding-box;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;}
 p {text-align: center;}
 a {
 	text-align: center;
@@ -44,6 +52,7 @@ div.horizontalgap {
     <div class = "flexbutton1">
   <h2> Student </h2>
   <a href= "{% url 'login_student' %}"  class="favorite styled">Sign In</a>
+  &nbsp;
   <a href= "{% url 'register_student' %}"  class="favorite styled">Sign Up</a>
   </div>
 
@@ -52,6 +61,7 @@ div.horizontalgap {
   <div class = "flexbutton1">
   <h2> Professor </h2>
   <a href= "{% url 'login_professor' %}"  class="favorite styled">Sign In</a>
+  &nbsp;
   <a href= "{% url 'register_professor' %}"  class="favorite styled">Sign Up</a>
   </div>
 </center>
