@@ -38,20 +38,20 @@ def login_professor(request):
 def home_professor(request):
 	if request.method == "POST":
 	#Get the posted form
-		MyLoginForm = LoginForm(request.POST)
+		# MyLoginForm = LoginForm(request.POST)
 
-		if MyLoginForm.is_valid():
-			prof = PROFESSOR(First_Name = MyLoginForm.cleaned_data['first_name'],Last_Name = MyLoginForm.cleaned_data['last_name'],Email_ID = MyLoginForm.cleaned_data['email'],University = MyLoginForm.cleaned_data['college'],Expertise = MyLoginForm.cleaned_data['expert'], Password = MyLoginForm.cleaned_data['psw'] )
-			prof.save();
+		# if MyLoginForm.is_valid():
+		prof = PROFESSOR(id = 1,First_Name = request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Expertise =  request.POST.get('expert'), Password =  request.POST.get('psw') )
+		prof.save();
 	return render(request, "home.html")
 
 def home_student(request):
 	if request.method == "POST":
 	#Get the posted form
-		MyLoginForm = LoginForm(request.POST)
+		# MyLoginForm = LoginForm(request.POST)
 
-		if MyLoginForm.is_valid():
-			stud = STUDENT(First_Name = MyLoginForm.cleaned_data['first_name'],Last_Name = MyLoginForm.cleaned_data['last_name'],Email_ID = MyLoginForm.cleaned_data['email'],University = MyLoginForm.cleaned_data['college'],Branch = MyLoginForm.cleaned_data['branch'], Password = MyLoginForm.cleaned_data['psw'] )
-			stud.save();
+		# if MyLoginForm.is_valid():
+		stud = STUDENT(id =1, First_Name =  request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Branch =  request.POST.get('branch'), Password =  request.POST.get('psw') )
+		stud.save();
 	return render(request, "home.html")
 
