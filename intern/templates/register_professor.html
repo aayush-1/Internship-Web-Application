@@ -1,10 +1,10 @@
-<form action="action_page.php">
+<form action="{% url 'home_proffesor' %}" method = "POST" >
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 <label for="first_name"><b>First Name* :</b></label>
-    <input type="text" name="firat_name" id="first_name" required>
+    <input type="text" name="first_name" id="first_name" required>
     <br>
     <br>
     <label for="middle_name"><b>Middle Name :</b></label>
@@ -23,8 +23,8 @@
     <input type="text" name="college" id="college" required>
 <br>
     <br>
-    <label for="branch"><b>Branch* :</b></label>
-    <input type="text" name="branch" id="branch" required>
+    <label for="expert"><b>Expertise* :</b></label>
+    <input type="text" name="expert" id="expert" required>
 <br>
     <br>
     <label for="psw"><b>Create Password* :</b></label>
@@ -32,7 +32,7 @@
 <br>
     <br>
     <label for="psw"><b>Repeat Password* :</b></label>
-    <input type="text" name="psw" id="psw" required>
+    <input type="text" name="psw" id="rpsw" required>
 <br>
     <br>
     <hr>
@@ -43,6 +43,6 @@
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="{% url 'login_professor' %}" >Sign in</a>.</p>
   </div>
 </form> 

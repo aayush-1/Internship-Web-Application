@@ -6,6 +6,7 @@ class PROFESSOR(models.Model):
     Email_ID = models.TextField()
     University = models.TextField()
     Expertise = models.TextField()
+    Password = models.TextField()
 
 class STUDENT(models.Model):
     First_Name = models.TextField()
@@ -13,3 +14,4 @@ class STUDENT(models.Model):
     Email_ID = models.TextField()
     University = models.TextField()
     Branch = models.TextField()
+    Password = models.TextField()
