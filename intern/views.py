@@ -54,7 +54,9 @@ def home_student(request):
 def home(request):
 	# data = []
 	if request.method == "POST":
-		data = PROFESSOR.objects.filter(First_Name = request.POST.get("first_name"))
+		print(request.POST.get("first_name"))
+		print(request.POST.get("last_name"))
+		data = PROFESSOR.objects.filter(First_Name = request.POST.get("first_name"), Last_Name = request.POST.get("last_name"))
 
 	return render(request, "home.html",{"data" : data})
 
