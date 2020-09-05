@@ -2,6 +2,8 @@ from django.shortcuts import render
 from intern.models import PROFESSOR, STUDENT
 from django import forms
 
+X=1
+Y=1
 def prof_detail(request, pk):
 
     obj = PROFESSOR.objects.get(pk=pk)
@@ -37,21 +39,22 @@ def login_professor(request):
 
 def home_professor(request):
 	if request.method == "POST":
-	#Get the posted form
-		# MyLoginForm = LoginForm(request.POST)
-
-		# if MyLoginForm.is_valid():
-		prof = PROFESSOR(id = 1,First_Name = request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Expertise =  request.POST.get('expert'), Password =  request.POST.get('psw') )
+		prof = PROFESSOR(id = X,First_Name = request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Expertise =  request.POST.get('expert'), Password =  request.POST.get('psw') )
 		prof.save();
+		X+=1
 	return render(request, "home.html")
 
-def home_student(request):
+def home_student(request):	
 	if request.method == "POST":
-	#Get the posted form
-		# MyLoginForm = LoginForm(request.POST)
-
-		# if MyLoginForm.is_valid():
-		stud = STUDENT(id =1, First_Name =  request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Branch =  request.POST.get('branch'), Password =  request.POST.get('psw') )
+		stud = STUDENT(id =Y, First_Name =  request.POST.get('first_name'),Last_Name =  request.POST.get('last_name'),Email_ID =  request.POST.get('email'),University =  request.POST.get('college'),Branch =  request.POST.get('branch'), Password =  request.POST.get('psw') )
 		stud.save();
+		Y+=1
 	return render(request, "home.html")
+
+def home(request):
+	# data = []
+	if request.method == "POST":
+		data = PROFESSOR.objects.filter(First_Name = request.POST.get("first_name"))
+
+	return render(request, "home.html",{"data" : data})
 

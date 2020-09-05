@@ -11,6 +11,7 @@ urlpatterns = [
 	path("register_professor/", views.register_professor, name="register_professor"),
 	path("home_professor/", views.home_professor, name="home_professor"),
 	path("home_student/", views.home_student, name="home_student"),
+	path("home/", views.home, name="home"),
     path("<int:pk>/", views.prof_detail, name="prof_detail"),
 
 ]
